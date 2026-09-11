@@ -44,7 +44,7 @@ public class NumeroPar {
         return lista;
     }
 
-    public void parOuImpar() {
+    public void contarPares() {
         int cont = 0;
         for (int i = 0; i < tamanho; i++) {
             if (lista[i] % 2 == 0)
@@ -55,6 +55,6 @@ public class NumeroPar {
 
     public static void main(String[] args) {
         NumeroPar m = new NumeroPar();
-        m.parOuImpar();
+        m.contarPares();
     }
 }
