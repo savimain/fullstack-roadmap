@@ -13,19 +13,21 @@ public class Factorial {
     public int introduzirNumero() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
+        boolean valido = false;
         do {
+            System.out.print("Introduza um numero");
             try {
-                System.out.print("Introduza um numero");
                 n = Integer.parseInt(br.readLine());
                 if (n < 0)
-                    System.out.println("Erro!");
+                    System.out.println("Erro! O numero nao pode ser Negativo");
+                else
+                    valido = true;
             } catch (NumberFormatException ne) {
-                System.out.println("Erro! Introduza um número válido.");
+                System.out.println("Erro! Introduza um numero valido.");
             } catch (IOException io) {
                 System.out.println(io.getMessage());
             }
-
-        } while (n < 0);
+        } while (!valido);
         return n;
     }
 
