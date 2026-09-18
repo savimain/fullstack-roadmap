@@ -11,19 +11,22 @@ public class NumeroPrimo {
 
 	public int introduzirNumero() {
 		int n = 0;
+		boolean valido = false;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		do {
 			System.out.println("Introduza um numero!");
 			try {
 				n = Integer.parseInt(br.readLine());
+				if (n < 0)
+					System.out.println("Erro! Numero Invalido!");
+				else
+					valido = true;
 			} catch (NumberFormatException ne) {
-				System.out.println(ne.getMessage());
+				System.out.println("Erro! Introduza um numero valido.");
 			} catch (IOException io) {
 				System.out.println(io.getMessage());
 			}
-			if (n < 0)
-				System.out.println("Erro! Numero Invalido!");
-		} while (n < 0);
+		} while (!valido);
 		return n;
 	}
 
